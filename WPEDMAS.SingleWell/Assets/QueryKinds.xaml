@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:query="http://schemas.sharewin.com/2015/xaml/query"
+                    xmlns:vm="http://schemas.sharewin.com/2015/xaml/viewmodel"
+                    xmlns:cal="http://www.caliburnproject.org"
+                    xmlns:model="http://schemas.sharewin.com/2015/xaml/model"
+                    xmlns:local="clr-namespace:WPEDMAS.SingleWell">
+    <query:QueryToolBarConfig x:Key="WellNameQueryToolbarConfig">
+        <vm:WellNameQueryToolBarViewModel></vm:WellNameQueryToolBarViewModel>
+    </query:QueryToolBarConfig>
+
+    <CollectionViewSource x:Key="OilWellQueryKinds">
+        <CollectionViewSource.Source>
+            <x:Array Type="{x:Type vm:GroupedNavigationItemViewModel}">
+                <query:QueryNavigationItem Title="采油井基础数据查询" Group="综合查询">
+                    <query:QueryNavigationItem.Config>
+                        <query:GeneralQueryConfig EntityType="{x:Type model:SW_OW_BASEINFO}" ToolBar="{StaticResource WellNameQueryToolbarConfig}">
+                            <query:GeneralQueryConfig.FilterFromContainerMapping>
+                                <query:PropertyFilterMapping  Condition="EqualTo" SourceProperty="WellName" TargetProperty="WELL_NAME"/>
+                            </query:GeneralQueryConfig.FilterFromContainerMapping>
+                            <query:GeneralQueryConfig.Columns>
+                                <GridViewColumn DisplayMemberBinding="{Binding WELL_NAME}" Header="井号"></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding OIL_FIELD}" Header="油田"></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding BLOCK}" Header="区块"></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding AREA}" Header="作业区"></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding COORDINATE_X}" Header="地面坐标 X" />
+                                <GridViewColumn DisplayMemberBinding="{Binding COORDINATE_Y}" Header="地面坐标 Y" />
+                                <GridViewColumn DisplayMemberBinding="{Binding ELEVATION}" Header="地面海拔(m)" />
+                                <GridViewColumn DisplayMemberBinding="{Binding USE_DATE, StringFormat ={}{0:yyyy/MM/dd} }" Header="投用日期" />
+                                <GridViewColumn DisplayMemberBinding="{Binding TYPE}" Header="井别" />
+                                <GridViewColumn DisplayMemberBinding="{Binding KIND}" Header="井型" />
+
+                                <GridViewColumn DisplayMemberBinding="{Binding POSITION}" Header="地理位置" />
+                                <GridViewColumn DisplayMemberBinding="{Binding KB_ELEVATION}" Header="补心海拔(m)" />
+                                <GridViewColumn DisplayMemberBinding="{Binding MANAGE_UNIT}" Header="所属管理单元" />
+                                <GridViewColumn DisplayMemberBinding="{Binding WF_STATION}" Header="所属站点" />
+                                <GridViewColumn DisplayMemberBinding="{Binding WELL_GROUP}" Header="所属井组" />
+                                <GridViewColumn DisplayMemberBinding="{Binding GATHERING_METHOD}" Header="集输方式" />
+                            </query:GeneralQueryConfig.Columns>
+                        </query:GeneralQueryConfig>
+                    </query:QueryNavigationItem.Config>
+                </query:QueryNavigationItem>
+                
+            </x:Array>
+        </CollectionViewSource.Source>
+    </CollectionViewSource>
+
+</ResourceDictionary>

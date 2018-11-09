@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>D:\SharewinSoft\WPEDMAS\|publish\|http://localhost/WPEDMAS/|http://localhost/</PublishUrlHistory>
+    <InstallUrlHistory>http://192.168.0.248:80/|http://192.168.0.248:80/WPEDMAS/|http://localhost/</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>http://192.168.0.248:80/|http://localhost/</UpdateUrlHistory>
+    <BootstrapperUrlHistory>http://192.168.0.248:80/|http://192.168.0.248/</BootstrapperUrlHistory>
+    <ErrorReportUrlHistory />
+    <FallbackCulture>zh-CN</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+</Project>

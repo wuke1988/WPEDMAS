@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="http://schemas.sharewin.com/2015/xaml/viewmodel"
+                    xmlns:localViewModels="clr-namespace:WPEDMAS.DataManagement.ViewModels"
+                    xmlns:sys="clr-namespace:System;assembly=System">
+
+    <x:Array x:Key="SecondLevelMenus" Type="{x:Type viewModels:SecondLevelMenuViewModel}">
+        <viewModels:SecondLevelMenuViewModel Name="工艺指标计算" 
+                                             IconImage="常用计算.png"
+                                             IconHeight="324" IconWidth="466"/>
+        <viewModels:SecondLevelMenuViewModel Name="报表统计分析" 
+                                             IconImage="报表生成.png"
+                                             IconHeight="324" IconWidth="466"/>
+        <viewModels:SecondLevelMenuViewModel Name="数据统计计算" 
+                                             IconImage="数据统计.png"
+                                             IconHeight="324" IconWidth="466"/>
+    </x:Array>
+</ResourceDictionary>

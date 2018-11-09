@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Oracle.ManagedDataAccess.Full</id>
+    <version>1.0.0</version>
+    <authors>SunnyCase</authors>
+    <description>Oracle.ManagedDataAccess.Full</description>
+    <language>Neutral</language>
+    <projectUrl>http://www.oracle.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) 2016</copyright>
+    <tags></tags>
+  </metadata>
+
+  <files>
+    <file src="Oracle.ManagedDataAccess.dll" target="lib\net45\" />
+    <file src="Oracle.ManagedDataAccess.EntityFramework.dll" target="lib\net45\" />
+</files>
+</package>

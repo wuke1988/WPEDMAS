@@ -1,0 +1,12 @@
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\WPEDMAS.Models.dll.config
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\WPEDMAS.Models.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\WPEDMAS.Models.pdb
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\EntityFramework.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\EntityFramework.xml
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\obj\Debug\WPEDMAS.Models.csprojAssemblyReference.cache
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\obj\Debug\WPEDMAS.Models.csproj.CoreCompileInputs.cache
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\obj\Debug\WPEDMAS.Models.csproj.CopyComplete
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\obj\Debug\WPEDMAS.Models.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Models\obj\Debug\WPEDMAS.Models.pdb

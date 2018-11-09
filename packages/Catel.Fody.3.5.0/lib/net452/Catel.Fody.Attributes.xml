@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Catel.Fody.Attributes</name>
+    </assembly>
+    <members>
+        <member name="T:MethodTimeLogger">
+            <summary>
+            Note: do not rename this class or put it inside a namespace.
+            </summary>
+        </member>
+        <member name="T:Catel.Fody.ImplementsInterfaceAttribute">
+            <summary>
+            Implements interface attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.ImplementsInterfaceAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.ImplementsInterfaceAttribute"/> class.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="T:Catel.Fody.InheritsFromAttribute">
+            <summary>
+            Inherits from attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.InheritsFromAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.InheritsFromAttribute"/> class.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="T:Catel.Fody.MatchAttribute">
+            <summary>
+            Match attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.MatchAttribute.#ctor(System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MatchAttribute"/> class.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="regexOptions">The regex options.</param>
+        </member>
+        <member name="T:Catel.Fody.MaximumAttribute">
+            <summary>
+            Max value attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.MaximumAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MaximumAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MaximumAttribute.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MaximumAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MaximumAttribute.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MaximumAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MaximumAttribute.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MaximumAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MaximumAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MaximumAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Catel.Fody.MinimalAttribute">
+            <summary>
+            Minimal attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.MinimalAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MinimalAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MinimalAttribute.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MinimalAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MinimalAttribute.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MinimalAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MinimalAttribute.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MinimalAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Catel.Fody.MinimalAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.MinimalAttribute"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Catel.Fody.NotMatchAttribute">
+            <summary>
+            Not match attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.NotMatchAttribute.#ctor(System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotMatchAttribute"/> class.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="regexOptions">The regex options.</param>
+        </member>
+        <member name="T:Catel.Fody.NotNullAttribute">
+            <summary>
+            Not null attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Catel.Fody.NotNullOrEmptyArrayAttribute">
+            <summary>
+            Not null or empty array attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Catel.Fody.NotNullOrEmptyAttribute">
+            <summary>
+            Not null or empty attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Catel.Fody.NotNullOrWhitespaceAttribute">
+            <summary>
+            Not null or whites space attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Catel.Fody.NotOutOfRangeAttribute">
+            <summary>
+            Not out of range attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.NotOutOfRangeAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotOutOfRangeAttribute"/> class.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+        </member>
+        <member name="M:Catel.Fody.NotOutOfRangeAttribute.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotOutOfRangeAttribute"/> class.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+        </member>
+        <member name="M:Catel.Fody.NotOutOfRangeAttribute.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotOutOfRangeAttribute"/> class.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+        </member>
+        <member name="M:Catel.Fody.NotOutOfRangeAttribute.#ctor(System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotOutOfRangeAttribute"/> class.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+        </member>
+        <member name="M:Catel.Fody.NotOutOfRangeAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.NotOutOfRangeAttribute"/> class.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+        </member>
+        <member name="T:Catel.Fody.OfTypeAttribute">
+            <summary>
+            Of type attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.OfTypeAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.OfTypeAttribute"/> class.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="T:Catel.Fody.NoWeavingAttribute">
+            <summary>
+            No weaving attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Catel.Fody.ExcludeFromBackupAttribute">
+            <summary>
+            Excludes a specific Catel property from the backup logic. Note that this
+            can only be applied to properties being processed by Catel.Fody.
+            </summary>
+        </member>
+        <member name="T:Catel.Fody.ExposeAttribute">
+            <summary>
+            The expose attribute.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Catel.Fody.ExposeAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.ExposeAttribute" /> class.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <exception cref="T:System.ArgumentException">The <paramref name="propertyName" /> is <c>null</c> or whitespace.</exception>
+            <remarks>
+            Do not create default values for attribute constructors! For more information, see:
+            http://stackoverflow.com/questions/8290853/attribute-argument-must-be-a-constant-error-when-using-an-optional-parameter-in 
+            </remarks>
+        </member>
+        <member name="M:Catel.Fody.ExposeAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Catel.Fody.ExposeAttribute" /> class.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="propertyNameOnModel">The property name configuration model.</param>
+            <exception cref="T:System.ArgumentException">The <paramref name="propertyName" /> is <c>null</c> or whitespace.</exception>
+        </member>
+        <member name="P:Catel.Fody.ExposeAttribute.PropertyName">
+            <summary>
+              Gets the name of the property that should be automatically created.
+            </summary>
+            <value>The name of the property.</value>
+        </member>
+        <member name="P:Catel.Fody.ExposeAttribute.PropertyNameOnModel">
+            <summary>
+              Gets or sets the name of the property on the model. If the <see cref = "P:Catel.Fody.ExposeAttribute.PropertyName" /> is not the
+              same as the name of the property on the model, this can be used to map the properties.
+              <para />
+              By default, the value is the same as the <see cref="P:Catel.Fody.ExposeAttribute.PropertyName"/>.
+              <example>
+                In this example, the name of the property to map on the model is <c>first_name</c>, but
+                it must be available as <c>FirstName</c> on the view model.
+                <code>
+                  <![CDATA[
+                    [Model]
+                    [Expose("FirstName", "first_name")]
+                    public Person Person { get; set; }
+                  ]]>
+                </code>
+              </example>
+            </summary>
+            <value>The property name on model.</value>
+        </member>
+        <member name="P:Catel.Fody.ExposeAttribute.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this property is read only.
+            </summary>
+            <value><c>true</c> if this property is read only; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>

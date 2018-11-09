@@ -1,0 +1,472 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="http://schemas.sharewin.com/2015/xaml/viewmodel"
+                    xmlns:local="clr-namespace:WPEDMAS.Client.Themes">
+
+    <ImageBrush x:Key="WindowTitleBackgroundBrush" ImageSource="back_title.png" Stretch="Fill"/>
+    <ImageBrush x:Key="WindowLeftBackgroundBrush" ImageSource="侧栏back.png" Stretch="Fill"/>
+    <ImageBrush x:Key="WindowRightBackgroundBrush" ImageSource="back-main.png" Stretch="Fill"/>
+
+    <SolidColorBrush x:Key="ð" Color="DarkGray" />
+    <SolidColorBrush x:Key="ñ" Color="Transparent" />
+    <SolidColorBrush x:Key="ò" Color="#666" />
+    <SolidColorBrush x:Key="ó" Color="#FF3C7FB1" />
+    <SolidColorBrush x:Key="ô" Color="Transparent" />
+    <SolidColorBrush x:Key="õ" Color="#222" />
+    <SolidColorBrush x:Key="ö" Color="#FF526C7B" />
+    <SolidColorBrush x:Key="÷" Color="Transparent" />
+    <SolidColorBrush x:Key="ø" Color="#FF003366" />
+    <SolidColorBrush x:Key="ù" Color="DarkGray" />
+    <SolidColorBrush x:Key="ú" Color="Transparent" />
+    <SolidColorBrush x:Key="û" Color="#666" />
+    <Style x:Key="ü">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="0" StrokeThickness="1" Stroke="#FF000000" StrokeDashArray="1 2" SnapsToDevicePixels="True" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ý" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding="{TemplateBinding Control.Padding}">
+                        <Grid Background="#00FFFFFF" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Ellipse Name="circle" Width="19" Height="19" Stroke="{StaticResource ð}" Fill="{StaticResource ñ}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Path Name="arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource ò}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M1,1.5L4.5,5 8,1.5" />
+                            <ContentPresenter Grid.Column="1" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="arrow" Property="Path.Data" Value="M1,4.5L4.5,1 8,4.5" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Value="{StaticResource ó}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ô}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource õ}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Value="{StaticResource ö}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter TargetName="circle" Property="Shape.StrokeThickness" Value="1.5" />
+                            <Setter Value="{StaticResource ÷}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource ø}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter Value="{StaticResource ù}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ú}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource û}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Ā" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding="{TemplateBinding Control.Padding}">
+                        <Grid Background="Transparent" SnapsToDevicePixels="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.LayoutTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <TransformCollection>
+                                                <RotateTransform Angle="-90" />
+                                            </TransformCollection>
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Grid.LayoutTransform>
+                                <!--<Ellipse Name="circle" Width="19" Height="19" Stroke="{StaticResource ð}" Fill="{StaticResource ñ}" 
+                                         HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+                                <Path x:Name="circle" Data="M0,0 L10,10 130,10 140,0Z" Fill="#7700AAEE" HorizontalAlignment="Center"/>
+                                <!--<Path Name="arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource ò}" 
+                                      StrokeThickness="2" SnapsToDevicePixels="False" Data="M1,1.5L4.5,5 8,1.5" />-->
+                                <Path x:Name="arrow" Data="M1,1.5L11.5,8.5 22,1.5Z" HorizontalAlignment="Center" 
+                                      SnapsToDevicePixels="False" Fill="White" StrokeThickness="2" VerticalAlignment="Top"/>
+                            </Grid>
+                            <ContentPresenter Grid.Row="1" Margin="0,4,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                                              SnapsToDevicePixels="True" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="arrow" Property="Path.Data" Value="M1,8.5L11.5,1 22,8.5Z"/>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Value="#9900BBFF" TargetName="circle" Property="Shape.Fill" />
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Value="#5500AAEE" TargetName="circle" Property="Shape.Fill" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="þ" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding="{TemplateBinding Control.Padding}">
+                        <Grid Background="#00FFFFFF" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.LayoutTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <TransformCollection>
+                                                <RotateTransform Angle="180" />
+                                            </TransformCollection>
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Grid.LayoutTransform>
+                                <Ellipse Name="circle" Width="19" Height="19" Stroke="{StaticResource ð}" Fill="{StaticResource ñ}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Path Name="arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource ò}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M1,1.5L4.5,5 8,1.5" />
+                            </Grid>
+                            <ContentPresenter Grid.Column="1" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="arrow" Property="Path.Data" Value="M1,4.5L4.5,1 8,4.5" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Value="{StaticResource ó}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ô}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource õ}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Value="{StaticResource ö}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter TargetName="circle" Property="Shape.StrokeThickness" Value="1.5" />
+                            <Setter Value="{StaticResource ÷}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource ø}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter Value="{StaticResource ù}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ú}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource û}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ÿ" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding="{TemplateBinding Control.Padding}">
+                        <Grid Background="#00FFFFFF" SnapsToDevicePixels="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="19" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.LayoutTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <TransformCollection>
+                                                <RotateTransform Angle="90" />
+                                            </TransformCollection>
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Grid.LayoutTransform>
+                                <Ellipse Name="circle" Width="19" Height="19" Stroke="{StaticResource ð}" Fill="{StaticResource ñ}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Path Name="arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource ò}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M1,1.5L4.5,5 8,1.5" />
+                            </Grid>
+                            <ContentPresenter Grid.Row="1" Margin="0,4,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" SnapsToDevicePixels="True" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="arrow" Property="Path.Data" Value="M1,4.5L4.5,1 8,4.5" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Value="{StaticResource ó}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ô}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource õ}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Value="{StaticResource ö}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter TargetName="circle" Property="Shape.StrokeThickness" Value="1.5" />
+                            <Setter Value="{StaticResource ÷}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource ø}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter Value="{StaticResource ù}" TargetName="circle" Property="Shape.Stroke" />
+                            <Setter Value="{StaticResource ú}" TargetName="circle" Property="Shape.Fill" />
+                            <Setter Value="{StaticResource û}" TargetName="arrow" Property="Shape.Stroke" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
+        <Setter Property="Control.Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Control.BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="Control.BorderThickness" Value="10" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" 
+                            Background="{TemplateBinding Control.Background}" CornerRadius="3" SnapsToDevicePixels="True">
+                        <!--采用grid容器来存放开关按钮和内容，以使开关按钮可以垂直居中-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Name="HeaderSite" Grid.Column="0" VerticalAlignment="Center" Margin="1" MinWidth="0" MinHeight="0" Style="{StaticResource ý}" 
+                                          FocusVisualStyle="{StaticResource ü}" Content="{TemplateBinding HeaderedContentControl.Header}" 
+                                          ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" 
+                                          ContentTemplateSelector="{TemplateBinding HeaderedContentControl.HeaderTemplateSelector}" 
+                                          Foreground="{TemplateBinding Control.Foreground}" Padding="{TemplateBinding Control.Padding}" 
+                                          FontFamily="{TemplateBinding Control.FontFamily}" FontSize="{TemplateBinding Control.FontSize}" 
+                                          FontStyle="{TemplateBinding Control.FontStyle}" FontStretch="{TemplateBinding Control.FontStretch}" 
+                                          FontWeight="{TemplateBinding Control.FontWeight}" 
+                                          HorizontalContentAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                          VerticalContentAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                                          IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ContentPresenter Name="ExpandSite" Grid.Column="1" Visibility="Collapsed" Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                                              Margin="{TemplateBinding Control.Padding}" >
+                                <ContentPresenter.LayoutTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="0.5" ScaleY="0" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </ContentPresenter.LayoutTransform>
+                            </ContentPresenter>
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ExpansionStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0" To="Expanded">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <CubicEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value=".5"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition GeneratedDuration="0" To="Collapsed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Collapsed}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ExpandSite">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value=".5"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Expanded">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Collapsed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ExpandSite">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0" Value=".5"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Expander.IsExpanded" Value="True">
+                            <Setter TargetName="ExpandSite" Property="UIElement.Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="Expander.ExpandDirection" Value="Right">
+                            <Setter Value="{StaticResource Ā}" TargetName="HeaderSite" Property="FrameworkElement.Style" />
+                        </Trigger>
+                        <Trigger Property="Expander.ExpandDirection" Value="Up">
+                            <!--<Setter TargetName="ExpandSite" Property="DockPanel.Dock" Value="Top" />
+                            <Setter TargetName="HeaderSite" Property="DockPanel.Dock" Value="Bottom" />-->
+                            <Setter Value="{StaticResource þ}" TargetName="HeaderSite" Property="FrameworkElement.Style" />
+                        </Trigger>
+                        <Trigger Property="Expander.ExpandDirection" Value="Left">
+                            <!--<Setter TargetName="ExpandSite" Property="DockPanel.Dock" Value="Left" />
+                            <Setter TargetName="HeaderSite" Property="DockPanel.Dock" Value="Right" />-->
+                            <Setter Value="{StaticResource ÿ}" TargetName="HeaderSite" Property="FrameworkElement.Style" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Control.Foreground" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TopLevelMenuListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Margin" Value="0"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Border Name="Bd" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}"
+                            BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                        <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </ScrollViewer>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Border.Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="viewModels:TopLevelWidget">
+                    <StackPanel Margin="20,10">
+                        <Viewbox Height="75" Width="82" Stretch="Uniform">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Path Name="path" Data="{Binding Data}" Fill="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ListBoxItem}}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock Text="{Binding Title}" FontFamily="Microsoft YaHei"  FontSize="18" FontWeight="Normal" Margin="0,10,0,0" 
+                                   LineStackingStrategy="MaxHeight"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ResourceKey={x:Type ListBoxItem}}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment,
+                        RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FocusVisualStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                                       StrokeThickness="1" StrokeDashArray="1 2"></Rectangle>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                        Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}">
+                                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" 
+                                                      ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    </ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource self},Path=IsSelected}" Value="True">
+                            <Setter Property="Foreground" Value="#FFF7BD23"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=IsMouseOver}"  Value="True">
+                            <Setter Property="Foreground" Value="#FFF7BD23"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

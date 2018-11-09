@@ -1,0 +1,5 @@
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Data\bin\Debug\WPEDMAS.Data.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Data\bin\Debug\WPEDMAS.Data.pdb
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Data\obj\Debug\WPEDMAS.Data.csproj.CoreCompileInputs.cache
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Data\obj\Debug\WPEDMAS.Data.dll
+E:\PersonCode\Net\WPEDMAS\WPEDMAS.Data\obj\Debug\WPEDMAS.Data.pdb

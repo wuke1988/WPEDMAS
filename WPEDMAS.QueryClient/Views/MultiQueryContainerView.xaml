@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="WPEDMAS.QueryClient.Views.MultiQueryContainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPEDMAS.QueryClient.Views"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPEDMAS.Assets;Component/ThirdLevelStyles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="../Assets/CommonStyles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Background="#FFE3F1FF" Padding="10" BorderBrush="#1f4c98" BorderThickness="1">
+                <ListBox x:Name="lb_QueryKind" ItemsSource="{Binding QueryKinds}"  Style="{StaticResource QueryKindListBoxStyle}"
+                         SelectedItem="{Binding SelectedQuery,Mode=TwoWay}"></ListBox>
+            </Border>
+            <Border Grid.Row="1" Background="#FFE3F1FF" Margin="0,10,0,0" Padding="10" BorderBrush="#1f4c98" BorderThickness="1">
+                <ListBox ItemsSource="{Binding SelectedQuery.Config.DisplayColumns}" Style="{StaticResource QueryColumnsSelectionListBoxStyle}"
+                          ></ListBox>
+            </Border>
+        </Grid>
+        <GridSplitter Background="Transparent" HorizontalAlignment="Right" Width="10"></GridSplitter>
+        <Grid Grid.Column="1" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Height="50" Background="#FFE3F1FF" BorderBrush="#1f4c98" BorderThickness="1" Visibility="{Binding SelectedQuery.Config.HasToolBar,Converter={StaticResource VisibilityToBooleanConverter}}" >
+                <ContentControl cal:View.Model="{Binding SelectedQuery.Config.ToolBar,FallbackValue={x:Null}}"></ContentControl>
+            </Border>
+            <Border Background="#FFE3F1FF" Grid.Row="1" BorderBrush="#1f4c98" BorderThickness="1" Margin="0,10,0,0">
+                <telerik:RadTabControl x:Name="rt_queryTabs" ItemsSource="{Binding OpenQueries}"   Style="{StaticResource QueryTabControlStyle}"
+                                       SelectedItem="{Binding SelectedQuery,Mode=TwoWay}">
+                    <telerik:StyleManager.Theme>
+                        <telerik:Windows8Theme></telerik:Windows8Theme>
+                    </telerik:StyleManager.Theme>
+                </telerik:RadTabControl>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

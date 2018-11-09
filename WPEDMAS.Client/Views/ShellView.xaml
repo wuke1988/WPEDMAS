@@ -1,0 +1,65 @@
+﻿<Window x:Class="WPEDMAS.Client.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPEDMAS.Client.Views"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="WPEDMAS" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0" BorderThickness="0" Background="{StaticResource WindowTitleBackgroundBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Margin="50,9,0,9" Source="../Themes/Layer 57 copy.png"></Image>
+                <TextBlock Grid.Column="1" Text="油田数据管理平台" Style="{StaticResource TitleBarTextBlockStyle}"></TextBlock>
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="用户名 :"></TextBlock>
+                    <TextBlock Margin="10,0,0,0" Text="管理员"></TextBlock>
+                    <TextBlock Margin="40,0,0,0" Text="2018-6-14 18:00:01 星期四"></TextBlock>
+                    <TextBlock Margin="40,0,0,0">
+                        <Hyperlink>退出</Hyperlink>
+                    </TextBlock>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="FontSize" Value="20"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+                        </Style>
+                    </StackPanel.Resources>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Margin="0" BorderThickness="0" Background="{StaticResource WindowRightBackgroundBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Expander  ExpandDirection="Right" Style="{StaticResource  ExpanderStyle}" IsEnabled="True" Margin="0"
+                           Background="{StaticResource WindowLeftBackgroundBrush}">
+                    <ListBox Name="TopLevelMenuList" Style="{StaticResource TopLevelMenuListBoxStyle}" ItemsSource="{Binding TopLevelWidgets}"
+                             SelectedIndex="0" 
+                             SelectedValuePath="Content"
+                             SelectedValue="{Binding SelectedSecondLevelMenu,Mode=OneWayToSource}"
+                             cal:Message.Attach="[Event MouseDoubleClick]=[Action lb_TopLevelMenu_MouseDown]">
+                    </ListBox>
+                </Expander>
+                <Border Grid.Column="1">
+                    <!--<Frame Name="frmMain" NavigationUIVisibility="Hidden"></Frame>-->
+                    <metro:TransitioningContentControl Name="ContentArea"  cal:View.Model="{Binding Path=ActiveContent}"
+                                    Style="{StaticResource SecondLevelMenuFrameStyle}"></metro:TransitioningContentControl>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
