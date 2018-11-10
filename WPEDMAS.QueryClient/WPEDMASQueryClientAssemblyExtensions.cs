@@ -13,8 +13,8 @@ namespace WPEDMAS.QueryClient
     {
         public static void AddQueryClient(this ICollection<Assembly> assemblies)
         {
-            assemblies.AddCommonQueryClient();
             assemblies.AddMvvm();
+            assemblies.AddCommonQueryClient();
             assemblies.Add(typeof(WPEDMASQueryClientAssemblyExtensions).Assembly);
         }
     }
